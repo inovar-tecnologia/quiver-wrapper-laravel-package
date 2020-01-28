@@ -26,7 +26,7 @@ class Client implements ClientInterface
     {
         $this->client = $client;
         $this->addHeader('Accept', 'application/json');
-        $this->addHeader('Content-Type', 'application/x-www-form-urlencoded');
+        $this->addHeader('Content-Type', 'multipart/form-data');
     }
 
     public function addHeader(string $name, string $value): ClientInterface
@@ -61,7 +61,12 @@ class Client implements ClientInterface
 
     public function setMultipartParams(array $multiPartParams): ClientInterface
     {
-        Arr::set($this->options, 'multipart', $multiPartParams);
+        foreach ($multiPartParams as $key => $value) {
+            $this->options['multipart'][] = [
+                'name' => $key,
+                'value' => $value,
+            ];
+        }
         return $this;
     }
 
@@ -73,7 +78,12 @@ class Client implements ClientInterface
 
     public function setFormParams(array $formParams): ClientInterface
     {
-        Arr::set($this->options, 'form_params', $formParams);
+        foreach ($formParams as $key => $value) {
+            $this->options['multipart'][] = [
+                'name' => $key,
+                'value' => $value,
+            ];
+        }
         return $this;
     }
 
