@@ -1,22 +1,23 @@
 {
-    "name": "segpartners/quiver-wrapper",
-    "type": "library",
-    "description": "This is a facility for communicating with the SegPartners Quiver Wrapper",
-    "autoload": {
-        "psr-4": {
-            "SegPartners\\QuiverWrapper\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Rodrigo Santos",
-            "email": "rodrigo@segpartners.com.br",
-            "homepage": "https://segpatners.com.br"
-        }
-    ],
-    "require": {
-        "php": "^7.2",
-        "laravel/framework": "^6.0",
-        "guzzlehttp/guzzle": "^6.5"
+  "name": "segpartners/quiver-wrapper",
+  "type": "library",
+  "description": "This is a facility for communicating with the SegPartners Quiver Wrapper",
+  "autoload": {
+    "psr-4": {
+      "SegPartners\\QuiverWrapper\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Rodrigo Santos",
+      "email": "rodrigo@segpartners.com.br",
+      "homepage": "https://segpatners.com.br"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "laravel/framework": "^6.0",
+    "guzzlehttp/guzzle": "^6.5"
+  },
+  "prefer-stable": true
 }
