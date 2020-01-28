@@ -40,4 +40,12 @@ abstract class Method
         return app(Client::class)->handle($this);
     }
 
+    protected function generateFileFormField($fieldName, $fileContent, $fileName)
+    {
+        return [
+          'name' => $fieldName,
+          'contents' => $fileContent,
+          'filename' => $fileName
+        ];
+    }
 }
