@@ -64,7 +64,7 @@ class Client implements ClientInterface
         foreach ($multiPartParams as $key => $value) {
             $this->options['multipart'][] = [
                 'name' => $key,
-                'value' => $value,
+                'contents' => $value,
             ];
         }
         return $this;
@@ -81,7 +81,7 @@ class Client implements ClientInterface
         foreach ($formParams as $key => $value) {
             $this->options['multipart'][] = [
                 'name' => $key,
-                'value' => $value,
+                'contents' => $value,
             ];
         }
         return $this;
