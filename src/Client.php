@@ -61,7 +61,7 @@ class Client implements ClientInterface
 
     public function setMultipartParams(array $multiPartParams): ClientInterface
     {
-        Arr::set($this->options, 'multi_part', $multiPartParams);
+        Arr::set($this->options, 'multipart', $multiPartParams);
         return $this;
     }
 
