@@ -15,8 +15,9 @@ class StoreAttachment extends Method
     private $image_type;
     private $file_type;
     private $file;
+    private $file_name;
 
-    public function __construct($description, $client, $document, $change, $image_type, $file_type, \SplFileInfo $file)
+    public function __construct($description, $client, $document, $change, $image_type, $file_type, string $file, string $file_name)
     {
         $this->description = $description;
         $this->client = $client;
@@ -25,6 +26,7 @@ class StoreAttachment extends Method
         $this->image_type = $image_type;
         $this->file_type = $file_type;
         $this->file = $file;
+        $this->file_name = $file_name;
     }
 
     public function authorizeUsing(): AuthorizationInterface
@@ -37,7 +39,7 @@ class StoreAttachment extends Method
         return [
             'name' => 'file',
             'contents' => $this->file,
-            'filename' => $this->file->getFilename(),
+            'filename' => $this->file_name,
         ];
     }
 
