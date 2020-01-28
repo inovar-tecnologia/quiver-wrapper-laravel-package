@@ -37,11 +37,7 @@ class StoreAttachment extends Method
     public function getMultiPartParams(): array
     {
         return [
-            [
-                'name' => 'file',
-                'contents' => $this->file,
-                'filename' => $this->file_name,
-            ]
+            $this->generateFileFormField('file', $this->file, $this->file_name),
         ];
     }
 
