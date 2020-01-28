@@ -1,5 +1,5 @@
 {
-    "name": "segPartners/quiverWrapper",
+    "name": "segpartners/quiver-wrapper",
     "type": "library",
     "description": "This is a facility for communicating with the SegPartners Quiver Wrapper",
     "autoload": {
