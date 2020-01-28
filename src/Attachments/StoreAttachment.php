@@ -2,7 +2,6 @@
 
 namespace SegPartners\QuiverWrapper\Attachments;
 
-use Illuminate\Http\UploadedFile;
 use SegPartners\QuiverWrapper\Auth\BearerTokenAuthorization;
 use SegPartners\QuiverWrapper\Interfaces\AuthorizationInterface;
 use SegPartners\QuiverWrapper\Interfaces\Method;
@@ -17,7 +16,7 @@ class StoreAttachment extends Method
     private $file_type;
     private $file;
 
-    public function __construct($description, $client, $document, $change, $image_type, $file_type, UploadedFile $file = null)
+    public function __construct($description, $client, $document, $change, $image_type, $file_type, \SplFileInfo $file)
     {
         $this->description = $description;
         $this->client = $client;
@@ -37,8 +36,8 @@ class StoreAttachment extends Method
     {
         return [
             'name' => 'file',
-            'contents' => file_get_contents($this->file),
-            'filename' => $this->file->getClientOriginalName(),
+            'contents' => $this->file,
+            'filename' => $this->file->getFilename(),
         ];
     }
 
