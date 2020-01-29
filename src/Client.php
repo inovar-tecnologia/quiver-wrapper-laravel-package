@@ -7,11 +7,11 @@ use Illuminate\Support\Arr;
 use SegPartners\QuiverWrapper\Interfaces\AuthorizationInterface;
 use SegPartners\QuiverWrapper\Interfaces\ClientInterface;
 use SegPartners\QuiverWrapper\Interfaces\Method;
-use SegPartners\QuiverWrapper\Traits\ReadEnvProperties;
+use SegPartners\QuiverWrapper\Traits\UseConfigs;
 
 class Client implements ClientInterface
 {
-    use ReadEnvProperties;
+    use UseConfigs;
 
     private $url;
 
@@ -93,7 +93,7 @@ class Client implements ClientInterface
 
     public function baseUri(): string
     {
-        return $this->getEnvProperty('QUIVER_WRAPPER_URL');
+        return $this->getConfig('url');
     }
 
     public function request(string $method)

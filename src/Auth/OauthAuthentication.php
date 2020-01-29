@@ -3,12 +3,12 @@
 namespace SegPartners\QuiverWrapper\Auth;
 
 use SegPartners\QuiverWrapper\Interfaces\Method;
-use SegPartners\QuiverWrapper\Traits\ReadEnvProperties;
+use SegPartners\QuiverWrapper\Traits\UseConfigs;
 
 class OauthAuthentication extends Method
 {
 
-    use ReadEnvProperties;
+    use UseConfigs;
 
     private $refresh_token;
     private $username;
@@ -21,10 +21,10 @@ class OauthAuthentication extends Method
 
         $this->refresh_token = $refresh_token;
 
-        $this->username = $this->getEnvProperty('QUIVER_WRAPPER_USERNAME');
-        $this->password = $this->getEnvProperty('QUIVER_WRAPPER_PASSWORD');
-        $this->client_id = $this->getEnvProperty('QUIVER_WRAPPER_CLIENT_ID');
-        $this->client_secret = $this->getEnvProperty('QUIVER_WRAPPER_CLIENT_SECRET');
+        $this->username = $this->getConfig('username');
+        $this->password = $this->getConfig('password');
+        $this->client_id = $this->getConfig('client_id');
+        $this->client_secret = $this->getConfig('client_secret');
 
     }
 
