@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <php>
+        <env name="QUIVER_WRAPPER_USERNAME" value="test@test.com"/>
+        <env name="QUIVER_WRAPPER_PASSWORD" value="12345678"/>
+        <env name="QUIVER_WRAPPER_CLIENT_ID" value="1"/>
+        <env name="QUIVER_WRAPPER_CLIENT_SECRET" value="hNhOGBrECjViV4QWo9jh4oYLCkAi6P5Glcl1vL4R"/>
+        <env name="QUIVER_WRAPPER_URL" value="http://127.0.0.1:8080"/>
+    </php>
+    <testsuites>
+        <testsuite name="Package Test Suite">
+            <directory suffix="Test.php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+</phpunit>
