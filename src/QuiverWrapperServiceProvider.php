@@ -10,6 +10,14 @@ class QuiverWrapperServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/quiver-wrapper.php' => config_path('quiver-wrapper.php'),
-        ]);
+        ],'quiver-wrapper-configs');
     }
+
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/quiver-wrapper.php', 'quiver-wrapper'
+        );
+    }
+
 }
