@@ -11,7 +11,7 @@ interface ClientInterface
 
     public function setFormParams(array $formParams): self;
 
-    public function setQueryParams(array $queryParams): self;
+    public function setQuery(array $query): self;
 
     public function setMultipartParams(array $multiPartParams): self;
 

@@ -43,7 +43,7 @@ class Client implements ClientInterface
     public function handle(Method $method)
     {
         $this->setMultipartParams($method->getMultiPartParams());
-        $this->setQueryParams($method->getQueryParams());
+        $this->setQuery($method->getQueryParams());
         $this->setFormParams($method->getFormParams());
 
         if ($method->authorizeUsing()) {
@@ -68,9 +68,9 @@ class Client implements ClientInterface
         return $this;
     }
 
-    public function setQueryParams(array $queryParams): ClientInterface
+    public function setQuery(array $query): ClientInterface
     {
-        Arr::set($this->options, 'query_params', $queryParams);
+        Arr::set($this->options, 'query', $query);
         return $this;
     }
 
