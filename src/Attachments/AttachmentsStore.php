@@ -6,7 +6,7 @@ use SegPartners\QuiverWrapper\Auth\BearerTokenAuthorization;
 use SegPartners\QuiverWrapper\Interfaces\AuthorizationInterface;
 use SegPartners\QuiverWrapper\Interfaces\Method;
 
-class StoreAttachment extends Method
+class AttachmentsStore extends Method
 {
     private $client;
     private $description;
