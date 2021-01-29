@@ -3,13 +3,13 @@
 return [
 
 
-    'url' => env('QUIVER_WRAPPER_URL', 'http://127.0.0.1:8080'),
+    'url' => env('QUIVER_WRAPPER_URL'),
 
 
-    'username' => env('QUIVER_WRAPPER_USERNAME', 'test@test.com'),
+    'username' => env('QUIVER_WRAPPER_USERNAME'),
 
 
-    'password' => env('QUIVER_WRAPPER_PASSWORD', '12345678'),
+    'password' => env('QUIVER_WRAPPER_PASSWORD'),
 
 
     'client_id' => env('QUIVER_WRAPPER_CLIENT_ID'),
