@@ -17,7 +17,7 @@ class QuiverWrapperServiceProvider extends ServiceProvider
 
     private function testConfigKey(string $key)
     {
-        $completeKey = 'config.' . $key;
+        $completeKey = 'quiver-wrapper.' . $key;
         $exception = new \UnexpectedValueException("The '{$completeKey}' key has not been set");
         throw_if(is_null(config($completeKey)), $exception);
     }
