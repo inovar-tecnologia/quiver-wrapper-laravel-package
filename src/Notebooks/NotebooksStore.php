@@ -4,6 +4,7 @@ namespace SegPartners\QuiverWrapper\Notebooks;
 
 use Carbon\Carbon;
 use SegPartners\QuiverWrapper\Auth\BearerTokenAuthorization;
+use SegPartners\QuiverWrapper\Client;
 use SegPartners\QuiverWrapper\Interfaces\AuthorizationInterface;
 use SegPartners\QuiverWrapper\Interfaces\Method;
 
@@ -31,7 +32,7 @@ class NotebooksStore extends Method
         $this->change = $change;
     }
 
-    public function makeAssigment($responsible, Carbon $limit_date)
+    public function makeAssigment($responsible, Carbon $limit_date): self
     {
         $this->assignment = true;
         $this->responsible = $responsible;
@@ -73,6 +74,6 @@ class NotebooksStore extends Method
 
     public function getMethod(): string
     {
-        return 'post';
+        return Client::HTTP_METHOD_POST;
     }
 }

@@ -3,6 +3,7 @@
 namespace SegPartners\QuiverWrapper\Query;
 
 use SegPartners\QuiverWrapper\Auth\BearerTokenAuthorization;
+use SegPartners\QuiverWrapper\Client;
 use SegPartners\QuiverWrapper\Interfaces\AuthorizationInterface;
 use SegPartners\QuiverWrapper\Interfaces\Method;
 
@@ -30,7 +31,7 @@ class Query extends Method
 
     public function getMethod(): string
     {
-        return 'post';
+        return Client::HTTP_METHOD_POST;
     }
 
     public function authorizeUsing(): AuthorizationInterface
