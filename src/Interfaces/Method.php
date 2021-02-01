@@ -27,7 +27,7 @@ abstract class Method
 
     public function getMethod(): string
     {
-        return 'get';
+        return Client::HTTP_METHOD_GET;
     }
 
     public function authorizeUsing(): AuthorizationInterface
@@ -35,12 +35,12 @@ abstract class Method
         return new NoAuthorization;
     }
 
-    public function handle()
+    public function handle(): \stdClass
     {
         return app(Client::class)->handle($this);
     }
 
-    protected function generateFileFormField($fieldName, $fileContent, $fileName)
+    protected function generateFileFormField($fieldName, $fileContent, $fileName): array
     {
         return [
           'name' => $fieldName,

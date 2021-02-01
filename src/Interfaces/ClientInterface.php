@@ -21,6 +21,6 @@ interface ClientInterface
 
     public function addHeader(string $name, string $value): ClientInterface;
 
-    public function handle(Method $method);
+    public function handle(Method $method): \stdClass;
 
 }

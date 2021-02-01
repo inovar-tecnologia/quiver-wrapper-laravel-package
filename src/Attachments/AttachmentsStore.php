@@ -3,6 +3,7 @@
 namespace SegPartners\QuiverWrapper\Attachments;
 
 use SegPartners\QuiverWrapper\Auth\BearerTokenAuthorization;
+use SegPartners\QuiverWrapper\Client;
 use SegPartners\QuiverWrapper\Interfaces\AuthorizationInterface;
 use SegPartners\QuiverWrapper\Interfaces\Method;
 
@@ -43,7 +44,7 @@ class AttachmentsStore extends Method
 
     public function getMethod(): string
     {
-        return 'post';
+        return Client::HTTP_METHOD_POST;
     }
 
     public function getFormParams(): array

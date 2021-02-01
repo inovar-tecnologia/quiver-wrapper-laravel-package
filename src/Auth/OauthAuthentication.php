@@ -2,6 +2,7 @@
 
 namespace SegPartners\QuiverWrapper\Auth;
 
+use SegPartners\QuiverWrapper\Client;
 use SegPartners\QuiverWrapper\Interfaces\Method;
 use SegPartners\QuiverWrapper\Traits\UseConfigs;
 
@@ -35,7 +36,7 @@ class OauthAuthentication extends Method
 
     public function getMethod(): string
     {
-        return 'post';
+        return Client::HTTP_METHOD_POST;
     }
 
     public function getFormParams(): array
