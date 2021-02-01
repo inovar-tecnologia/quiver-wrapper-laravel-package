@@ -11,6 +11,9 @@ use SegPartners\QuiverWrapper\Traits\UseConfigs;
 
 class Client implements ClientInterface
 {
+    public const HTTP_METHOD_POST = 'post';
+    public const HTTP_METHOD_GET = 'get';
+
     use UseConfigs;
 
     private $url;
@@ -40,7 +43,7 @@ class Client implements ClientInterface
         return $this;
     }
 
-    public function handle(Method $method)
+    public function handle(Method $method): \stdClass
     {
         $this->setMultipartParams($method->getMultiPartParams());
         $this->setQuery($method->getQueryParams());
