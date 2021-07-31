@@ -29,6 +29,23 @@ class Client implements ClientInterface
     {
         $this->client = $client;
         $this->addHeader('Accept', 'application/json');
+        $this->testConfigKeys();
+    }
+
+    private function testConfigKeys(): void
+    {
+        $this->testConfigKey('url');
+        $this->testConfigKey('username');
+        $this->testConfigKey('password');
+        $this->testConfigKey('client_id');
+        $this->testConfigKey('client_secret');
+    }
+
+    private function testConfigKey(string $key)
+    {
+        $completeKey = 'quiver-wrapper.' . $key;
+        $exception = new \UnexpectedValueException("The '{$completeKey}' key has not been set");
+        throw_if(is_null(config($completeKey)), $exception);
     }
 
     public function addHeader(string $name, string $value): ClientInterface
